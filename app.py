@@ -347,8 +347,15 @@ if forecast_df is not None:
     for i, col in enumerate(f_cols):
         day_data = forecast_df.iloc[i]
         d_aqi = day_data['AQI']
-        d_color = "#4ADE80" if d_aqi <= 2 else "#FACC15" if d_aqi == 3 else "#F87171"
-        d_status = "Good" if d_aqi <= 2 else "Moderate" if d_aqi == 3 else "Hazardous"
+        # Expanded color & status mapping for forecast cards
+        if d_aqi <= 2:
+            d_color, d_status = "#4ADE80", "Good"
+        elif d_aqi == 3:
+            d_color, d_status = "#FACC15", "Moderate"
+        elif d_aqi == 4:
+            d_color, d_status = "#F97316", "Unhealthy" # Orange
+        else:
+            d_color, d_status = "#F87171", "Hazardous" # Red
         
         with col:
             st.markdown(f"""
