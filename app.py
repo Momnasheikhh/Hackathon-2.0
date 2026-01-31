@@ -26,7 +26,8 @@ def load_artifacts():
         sample_data = pd.read_csv(os.path.join(MODEL_PATH, "sample_data.csv"))
         sample_data['datetime'] = pd.to_datetime(sample_data['datetime'])
         return model, features, cities, sample_data
-    except Exception:
+    except Exception as e:
+        st.error(f"Error loading artifacts from {MODEL_PATH}: {e}")
         return None, None, [], pd.DataFrame()
 
 model, feature_names, cities, data = load_artifacts()
