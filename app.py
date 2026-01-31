@@ -19,6 +19,16 @@ if not os.path.exists(MODEL_PATH):
 
 @st.cache_resource
 def load_artifacts():
+    required_files = ["aqi_model.pkl", "model_features.pkl", "cities.pkl", "sample_data.csv"]
+    
+    # Verify files exist
+    for f in required_files:
+        p = os.path.join(MODEL_PATH, f)
+        if not os.path.exists(p):
+            st.error(f"❌ Missing file: {p}")
+            st.info("Please ensure the 'models' folder is pushed to GitHub correctly.")
+            st.stop()
+            
     try:
         model = joblib.load(os.path.join(MODEL_PATH, "aqi_model.pkl"))
         features = joblib.load(os.path.join(MODEL_PATH, "model_features.pkl"))
@@ -27,10 +37,16 @@ def load_artifacts():
         sample_data['datetime'] = pd.to_datetime(sample_data['datetime'])
         return model, features, cities, sample_data
     except Exception as e:
-        st.error(f"Error loading artifacts from {MODEL_PATH}: {e}")
+        st.error(f"❌ Critical Error loading artifacts: {e}")
+        st.info("This might be due to a version mismatch in scikit-learn or joblib.")
+        st.stop()
         return None, None, [], pd.DataFrame()
 
 model, feature_names, cities, data = load_artifacts()
+
+if model is None:
+    st.warning("⚠️ Application is running in simulation-only mode (Model failed to load).")
+    st.stop()
 
 # -----------------------------------------------------------------------------
 # 2. FORECASTING ENGINE
