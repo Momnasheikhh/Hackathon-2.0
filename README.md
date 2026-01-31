@@ -6,7 +6,7 @@
 ![Status](https://img.shields.io/badge/Status-Live-success?style=for-the-badge)
 
 ## 🔴 Live Demo
-> **[Click Here to Launch Aura Forecast](YOUR_STREAMLIT_APP_URL_HERE)**  
+> **[Click Here to Launch Aura Forecast](https://hackathon-20-cfqdk9urljrmzvetszrpyq.streamlit.app)**  
 > *Experience the real-time AI dashboard live on Streamlit Cloud.*
 
 ---
