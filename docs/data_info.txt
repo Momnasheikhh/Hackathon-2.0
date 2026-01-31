@@ -1,0 +1,56 @@
+--- Loading concatenated_dataset_Aug_2021_to_July_2024.csv ---
+Columns: ['datetime', 'main_aqi', 'components_co', 'components_no', 'components_no2', 'components_o3', 'components_so2', 'components_pm2_5', 'components_pm10', 'components_nh3', 'temperature_2m', 'relative_humidity_2m', 'dew_point_2m', 'precipitation', 'surface_pressure', 'wind_speed_10m', 'wind_direction_10m', 'shortwave_radiation']
+Shape: (123134, 18)
+First 2 rows:
+         datetime  main_aqi  components_co  components_no  components_no2  components_o3  components_so2  components_pm2_5  components_pm10  components_nh3  temperature_2m  relative_humidity_2m  dew_point_2m  precipitation  surface_pressure  wind_speed_10m  wind_direction_10m  shortwave_radiation
+0  8/24/2021 0:00         5        1014.71           0.00           17.14          35.76            6.44             59.59            66.81            5.95            28.1                  80.0          24.3            0.0             976.6             6.2               170.0                    0
+1  8/24/2021 1:00         5        1054.76           0.01           19.36          32.19            6.68             66.96            74.88            6.08            27.8                  83.0          24.7            0.0             976.4             6.5               180.0                    0
+Missing values:
+datetime                0
+main_aqi                0
+components_co           0
+components_no           0
+components_no2          0
+components_o3           0
+components_so2          0
+components_pm2_5        0
+components_pm10         0
+components_nh3          0
+temperature_2m          0
+relative_humidity_2m    0
+dew_point_2m            0
+precipitation           0
+surface_pressure        0
+wind_speed_10m          0
+wind_direction_10m      0
+shortwave_radiation     0
+
+==============================
+--- Loading peshawar_complete_data.csv ---
+Columns: ['datetime', 'main.aqi', 'components.co', 'components.no', 'components.no2', 'components.o3', 'components.so2', 'components.pm2_5', 'components.pm10', 'components.nh3', 'temperature_2m', 'relative_humidity_2m', 'dew_point_2m', 'precipitation', 'surface_pressure', 'wind_speed_10m', 'wind_direction_10m', 'shortwave_radiation']
+Shape: (28245, 18)
+First 2 rows:
+              datetime  main.aqi  components.co  components.no  components.no2  components.o3  components.so2  components.pm2_5  components.pm10  components.nh3  temperature_2m  relative_humidity_2m  dew_point_2m  precipitation  surface_pressure  wind_speed_10m  wind_direction_10m  shortwave_radiation
+0  24/08/2021 00:00:00         5        1335.14           0.01           35.30          22.53            7.09             73.41            96.58           40.03            29.4                    59          20.6            0.0             961.5             7.6                  25                    0
+1  24/08/2021 01:00:00         5        1388.55           0.04           37.36          19.31            7.51             75.48            98.54           39.52            29.1                    61          20.8            0.0             961.9             7.4                  14                    2
+Missing values:
+datetime                0
+main.aqi                0
+components.co           0
+components.no           0
+components.no2          0
+components.o3           0
+components.so2          0
+components.pm2_5        0
+components.pm10         0
+components.nh3          0
+temperature_2m          0
+relative_humidity_2m    0
+dew_point_2m            0
+precipitation           0
+surface_pressure        0
+wind_speed_10m          0
+wind_direction_10m      0
+shortwave_radiation     0
+
+==============================
